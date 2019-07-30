@@ -1,0 +1,32 @@
+{% extends "suppliers/base.html" %}
+
+{% block title %}List Provider{% endblock %}
+
+{% block content %}
+    <h4 class="display-4 text-center text-success" style="font-size: 1.6em">Read <span class="text-muted">(Detail)</span></h4>
+
+    <div class="row" style="margin-top: 3rem">
+        <div class="col">
+            <a href="{% url "provider_list" %}">
+                <h4 class="text-center"><- Go Back</h4>
+            </a>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{object.first_name}} {{ object.last_name }}</h5>
+                <p class="card-text">
+                    {{ object.email }} <br> {{ object.phone_number }}
+                </p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{ object.language }} &nbsp;&nbsp;<span class="text-muted">(Language)</span></li>
+                  <li class="list-group-item">{{ object.currency }}&nbsp;&nbsp;<span class="text-muted">(Currency)</span></li>
+            </ul>
+        </div>
+        </div>
+
+    </div>
+
+{% endblock %}

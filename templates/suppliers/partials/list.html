@@ -1,0 +1,36 @@
+{% extends "suppliers/base.html" %}
+
+{% block title %}List Provider{% endblock %}
+
+{% block content %}
+    <h2 class="display-4 text-center text-success" style="font-size: 1.8em; margin: 2rem 0">List</h2>
+
+    <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Language</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for provider in object_list %}
+
+    <tr>
+      <th scope="row">
+          <a href="{% url "provider_view" provider.id %}">{{ provider.id }}</a>
+      </th>
+      <td>{{ provider.first_name }}</td>
+      <td>{{ provider.last_name }}</td>
+      <td>{{ provider.language }}</td>
+      <td><i class="far fa-edit"></i></td>
+      <td><i class="far fa-trash-alt"></i></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
