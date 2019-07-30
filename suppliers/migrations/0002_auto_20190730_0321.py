@@ -39,6 +39,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        # load_language_data(),
-        # load_currency_data(),
+        load_language_data(),
+        load_currency_data(),
     ]
